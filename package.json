@@ -1,0 +1,29 @@
+{
+	"name": "image-slider",
+	"version": "1.0.0",
+	"description": "simple program to show images in a carousel/slider",
+	"main": "webpack.config.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/GiacomoGitHub/image-slider.git"
+	},
+	"keywords": [
+		"slider",
+		"carousel"
+	],
+	"author": "Giacomo Podda",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/GiacomoGitHub/image-slider/issues"
+	},
+	"homepage": "https://github.com/GiacomoGitHub/image-slider#readme",
+	"devDependencies": {
+		"css-loader": "^5.2.4",
+		"style-loader": "^2.0.0",
+		"webpack": "^5.36.2",
+		"webpack-cli": "^4.7.0"
+	}
+}
