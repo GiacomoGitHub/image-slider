@@ -1,16 +1,82 @@
-img {
-	max-width: 300px;
-	max-height: 600px;
-}
-
-#container {
+.container {
 	background-color: black;
-	padding: 50px;
-	width: 300px;
-	margin-left: 500px;
-	margin-top: 100px;
+	overflow: hidden; /*this hides the images that go outside of the container and its frame*/
+	width: 90%;
+	box-sizing: border-box;
+	transform-style: preserve-3d;
 }
 
-#frame {
-	width: 5000px;
+.photo {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	margin: auto;
+	padding: 1rem 4rem;
+	z-index: 100;
+	transition: transform 0.5s, opacity 0.5s, z-index 0.5s;
+}
+
+.photo.initial,
+.photo.active {
+	opacity: 1;
+	position: relative;
+	z-index: 900;
+}
+
+.photo.prev,
+.photo.next {
+	z-index: 800; /* Moves the previous or next photo a bit higher but still behind the active one */
+}
+
+.photo.prev {
+	transform: translateX(-100%); /* Move the previous photo to the left */
+}
+
+.photo.next {
+	transform: translateX(100%); /* Move the next photo to the right */
+}
+
+.frame {
+	/* width: 4000px; */
+}
+
+.button--prev,
+.button--next {
+	position: absolute;
+	top: 50%;
+	width: 3rem;
+	height: 3rem;
+	background-color: #fff;
+	transform: translateY(-50%);
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 1001; /* It sits on top of everything else */
+	border: 1px solid black;
+}
+
+.button--prev {
+	left: 0;
+}
+
+.button--next {
+	right: 0;
+}
+
+.button--prev::after,
+.button--next::after {
+	content: ' ';
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 50%;
+	left: 54%;
+	border-right: 2px solid black;
+	border-bottom: 2px solid black;
+	transform: translate(-50%, -50%), rotate(135deg);
+}
+
+.button--next::after {
+	left: 47%;
+	transform: translate(-50%, -50%) rotate(-45deg);
 }
