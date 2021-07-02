@@ -38,7 +38,6 @@
 }
 
 .frame {
-	/* width: 4000px; */
 }
 
 .button--prev,
@@ -79,4 +78,9 @@
 .button--next::after {
 	left: 47%;
 	transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.button--prev::after {
+	left: 47%;
+	transform: translate(-50%, -50%) rotate(135deg);
 }
